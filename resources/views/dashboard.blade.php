@@ -28,7 +28,7 @@
                             @foreach($brands as $brand)
                                 <div class="col-4">
                                     <div class="card text-center  grid-element">
-                                        <a href="">
+                                        <a href='/dashboard/brands/{{$brand->id}}/products'>
                                             <img class="brand-card" src="{{ asset('storage/'.$brand->photo_url) }}" alt="{{ $brand->name }}">
                                             <div class="description">
                                                 {{ $brand->name }}

@@ -9,7 +9,7 @@ class BrandsController extends Controller
 {
     public function index()
     {
-        $brands = Brand::all();
+        $brands = Brand::paginate(4);
         return view('brands.index',['brands' => $brands]);
     }
 
@@ -50,7 +50,7 @@ class BrandsController extends Controller
             'user_id' => Auth::user()->id,
             
         ]);
-        return redirect('home');
+        return redirect('dashboard');
     }
 
     public function edit(Brand $brand){
@@ -59,6 +59,6 @@ class BrandsController extends Controller
 
     public function update(Brand $brand){
         $brand->update($this->validator());
-        return route('home');
+        return route('dashboard');
     }
 }

@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\DashboardController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,13 +24,24 @@ Route::get('/entrepreneurs', function() {
 });
 
 Route::get('/brands', [App\Http\Controllers\BrandsController::class, 'index']);
-Route::post('/brands', [App\Http\Controllers\BrandsController::class, 'store'])->name('brands.create');
-Route::get('/brands/create', [App\Http\Controllers\BrandsController::class, 'create']);
+Route::post('/brands', [App\Http\Controllers\BrandsController::class, 'store'])->middleware('auth')->name('brands.store');
+Route::get('/brands/create', [App\Http\Controllers\BrandsController::class, 'create'])->middleware('auth');
+Route::get('/brands/{id}', [App\Http\Controllers\BrandsController::class, 'show']);
+Route::put('/brands/{id}/edit', [App\Http\Controllers\BrandsController::class, 'edit'])->middleware('auth');
+// ↑ Check brand's owner
+// Route::delete('/brands/{id}', [App\Http\Controllers\BrandsController::class, 'delete'])->middleware('auth');
 
-Route::get('/products', function() {
-    return view('products');
-});
+Route::get('/brands/{id}/products', [App\Http\Controllers\ProductController::class, 'index']);
+// ↑ Show products from a brand
+Route::get('/products', [App\Http\Controllers\ProductController::class, 'index']);
+// ↑ Show all products
+Route::post('/products', [App\Http\Controllers\ProductController::class, 'store'])->name('products.store');
+Route::get('/products/{id}/create', [App\Http\Controllers\ProductController::class, 'create'])->middleware('auth');
+Route::get('/product/{id}/edit', [App\Http\Controllers\ProductController::class, 'edit'])->middleware('auth');
+Route::get('/products/{id}', [App\Http\Controllers\ProductController::class, 'show']);
+
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
+Route::get('/dashboard/brands/{id}/products', [App\Http\Controllers\DashboardController::class, 'products']);

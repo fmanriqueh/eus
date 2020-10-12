@@ -1,23 +1,23 @@
 @extends('layouts.master')
 
-@section('title', 'Emprendedores - EUS')
+@section('title', 'Productos - EUS')
 
 @section('content')
     <div class="entrepreneurs-container">
         <div class="row">
-            @foreach ($users as $user)
+            @foreach ($products as $product)
                 <div class="col-6 col-sm-4 col-md-3 text-center">
                     <div class="grid-element">
-                        <a href="{{ asset('entrepreneurs/'.$user->id)}}">
+                        <a href="{{ asset('products/'.$product->id)}}">
                             <div class="profile-picture">
-                                @if ($user->photo_url)
-                                    <img src="{{ asset('storage/'.$user->photo_url) }}" alt="{{ $user->name.' profile picture' }}" style="width: 100%">
+                                @if ($product->photo_url)
+                                    <img src="{{ asset('storage/'.$product->photo_url) }}" alt="{{ $product->name.' profile picture' }}" style="width: 100%">
                                 @else
-                                    <img src="{{ asset('storage/photos/img.jpg') }}" alt="{{ $user->name.' profile picture' }}" style="width: 100%">
+                                    <img src="{{ asset('storage/photos/img.jpg') }}" alt="{{ $product->name.' profile picture' }}" style="width: 100%">
                                 @endif
                             </div>
                             <div class="description">
-                                {{ $user->name }}
+                                {{ $product->name }}
                             </div>
                         </a>
                     </div>
@@ -26,6 +26,6 @@
         </div>
     </div>
     <div class="text-center">
-        {{ $users->links() }}
+        {{ $products->links() }}
     </div>
 @endsection
