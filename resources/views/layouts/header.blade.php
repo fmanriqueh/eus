@@ -6,11 +6,13 @@
           <a href="{{ url('/') }}"><img src={{ asset('logo/logo-eus-horizontal.png') }}></a>
           
         </div>
-        <div class="search">
-          <input type="text" class="search-textbox" placeholder="Search"> 
-          <a class="ico-btn search-btn"><i class="material-icons ic_search">&#xE8B6;</i></a>
-          <a class="ico-btn clear-btn"><i class="material-icons ic_clear">&#xE14C;</i></a>
-        </div>
+        <form id="query-form" action="{{ route('search') }}" style="display: flex;width:70%">
+          <div class="search">
+            <input id="query" name="query" type="text" class="search-textbox" placeholder="Search" required value=""> 
+            <a href="javascript:{}" onclick="document.getElementById('query-form').submit();"class="ico-btn search-btn"><i class="material-icons ic_search">&#xE8B6;</i></a>
+            <a href="javascript:{}" onclick="document.getElementById('query').value = '';" class="ico-btn clear-btn"><i class="material-icons ic_clear">&#xE14C;</i></a>
+          </div>
+        </form>
         <div class="utilities">
           <ul>
             <li id="account" class="utility">

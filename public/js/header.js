@@ -41,11 +41,13 @@ $(document).on('keyup', '.navbar input.search-textbox', function(){
 jQuery(function(){
     $(".navbar-bottom a").removeClass("active");
     let url = window.location.href;
-
+    if(url.search("/search") == -1)
+        $('#query').val("");    
     if(url.search("/entrepreneur") != -1)
         $("#entrepreneurs").addClass("active");
     if(url.search("/brands") != -1)
         $("#brands").addClass("active");
     if(url.search("/products") != -1)
         $("#products").addClass("active");
+
 });

@@ -40,6 +40,7 @@ Route::get('/products/{id}/create', [App\Http\Controllers\ProductController::cla
 Route::get('/product/{id}/edit', [App\Http\Controllers\ProductController::class, 'edit'])->middleware('auth');
 Route::get('/products/{id}', [App\Http\Controllers\ProductController::class, 'show']);
 
+Route::get('/search', [App\Http\Controllers\SearchController::class, 'search'])->name('search');
 
 Auth::routes();
 

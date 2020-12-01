@@ -10956,3 +10956,32 @@ body{
 .add-element img{
   padding: 15px;
 }
+
+.filter-settings{
+  border-bottom: 1px solid #162843;
+}
+.filter-settings a{
+  text-decoration: none;
+  color: #162843 !important;
+  cursor: pointer;
+}
+
+.filter-settings i{
+  position: relative;
+    top: 6px;
+    color: #162843;
+    -webkit-transition: all 0.5s ease;
+}
+.filter-settings a:hover i{
+    color: #48C590;
+} 
+
+.text-found{
+  position: relative;
+  top: 10px;
+  left: 5px;
+  padding-bottom: 5px;
+}
+.text-found::before{
+  content:'x';
+}
