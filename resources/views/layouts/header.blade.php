@@ -8,7 +8,7 @@
         </div>
         <form id="query-form" action="{{ route('search') }}" style="display: flex;width:70%">
           <div class="search">
-            <input id="query" name="query" type="text" class="search-textbox" placeholder="Search" required value=""> 
+            <input id="query" name="query" type="text" class="search-textbox" placeholder="Buscar" required value=""> 
             <a href="javascript:{}" onclick="document.getElementById('query-form').submit();"class="ico-btn search-btn"><i class="material-icons ic_search">&#xE8B6;</i></a>
             <a href="javascript:{}" onclick="document.getElementById('query').value = '';" class="ico-btn clear-btn"><i class="material-icons ic_clear">&#xE14C;</i></a>
           </div>

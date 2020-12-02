@@ -40,7 +40,7 @@
                             @endforeach
                         </div>
                     @else
-                        {{ __('El compita debe ser emprendedor para poder administrar sus marcas') }}
+                        {{ __('Debe ser emprendedor para poder administrar sus marcas') }}
                     @endif
 
                 </div>
