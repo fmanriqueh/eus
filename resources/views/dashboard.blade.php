@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Brands') }}</div>
+                <div class="card-header">{{ __('Marcas') }}</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -20,7 +20,7 @@
                                     <a href="/brands/create">
                                         <img class="brand-card" src="{{ asset('logo/plus.png') }}" alt="add-brand">
                                         <div class="description">
-                                            {{ __('Add new brand') }}
+                                            {{ __('Registrar una marca') }}
                                         </div>
                                     </a>
                                 </div>

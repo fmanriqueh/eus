@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Products') }}</div>
+                <div class="card-header">{{ __('Productos') }}</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -20,7 +20,7 @@
                                 <a href="/products/{{$brand_id}}/create">
                                     <img class="brand-card" src="{{ asset('logo/plus.png') }}" alt="add-brand">
                                     <div class="description">
-                                        {{ __('Add new product') }}
+                                        {{ __('Agregar producto') }}
                                     </div>
                                 </a>
                             </div>

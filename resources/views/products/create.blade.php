@@ -14,7 +14,7 @@
                         <input type="hidden", value="{{$brand_id}}" name="brand_id">
 
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nombre') }}</label>
 
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
@@ -28,7 +28,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="description" class="col-md-4 col-form-label text-md-right">{{ __('Description') }}</label>
+                            <label for="description" class="col-md-4 col-form-label text-md-right">{{ __('Descripción') }}</label>
 
                             <div class="col-md-6">
                                 <textarea id="description" type="text" class="form-control @error('description') is-invalid @enderror" name="description" value="{{ old('description') }}" required autocomplete="description" autofocus></textarea>
@@ -42,7 +42,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="photo" class="col-md-4 col-form-label text-md-right">{{ __('Photo') }}</label>
+                            <label for="photo" class="col-md-4 col-form-label text-md-right">{{ __('Foto') }}</label>
 
                             <div class="col-md-6">
                                 <input id="photo" type="file" class="file-chooser form-control @error('photo') is-invalid @enderror" name="photo" value="{{ old('photo') }}" autocomplete="photo" autofocus>
@@ -56,7 +56,7 @@
                         </div>
                         
                         <div class="form-group row">
-                            <label for="price" class="col-md-4 col-form-label text-md-right">{{ __('Price') }}</label>
+                            <label for="price" class="col-md-4 col-form-label text-md-right">{{ __('Precio') }}</label>
                             
                             <div class="col-md-6">
                                 <input id="price" type="number" class="form-control @error('price') is-invalid @enderror" name="price" value="{{ old('price') }}" required autocomplete="price" autofocus>
@@ -70,7 +70,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="more" class="col-md-4 col-form-label text-md-right">{{ __('More') }}</label>
+                            <label for="more" class="col-md-4 col-form-label text-md-right">{{ __('Detalles') }}</label>
 
                             <div class="col-md-6">
                                 <input id="more" type="text" class="form-control @error('more') is-invalid @enderror" name="more" value="{{ old('more') }}" required autocomplete="more" autofocus>

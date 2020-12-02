@@ -23,7 +23,7 @@ class ProductController extends Controller
         return request()->validate([
             'name' => ['required'],
             'description' => ['required'],
-            'price' => ['required','numeric'],
+            'price' => ['required','numeric','gt:0'],
             'more' => ['string','nullable'],
             'photo' => ['required','mimes:jpg,jpeg','max:1024'],
             'brand_id' => ['required','exists:brands,id,user_id,'.Auth::user()->id]
