@@ -11,7 +11,7 @@ class ProductController extends Controller
     public function index($id = null)
     {
         if(!$id){
-            $products = Product::paginate(4);
+            $products = Product::paginate(12);
             return view('products.index',['products' => $products]);
         }else{
             $products = Product::where('brand_id', $id)->paginate(4);
@@ -34,7 +34,8 @@ class ProductController extends Controller
         return view('products.create',['brand_id'=> $id]);
     }
     
-    public function show(Product $product){
+    public function show($id){
+        $product = Product::where('id',$id)->first();
         return view('products.show',['product'=>$product]);
     }
 

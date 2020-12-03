@@ -9,7 +9,7 @@ class BrandsController extends Controller
 {
     public function index()
     {
-        $brands = Brand::paginate(4);
+        $brands = Brand::paginate(12);
         return view('brands.index',['brands' => $brands]);
     }
 
@@ -28,7 +28,8 @@ class BrandsController extends Controller
         return view('brands.create');
     }
     
-    public function show(Brand $brand){
+    public function show($id){
+        $brand = Brand::where('id', $id)->first();
         return view('brands.show',['brand'=>$brand]);
     }
 

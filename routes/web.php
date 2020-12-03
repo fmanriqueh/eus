@@ -2,6 +2,14 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
+
+use App\Models\Product;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\MessageSent;
+
+use PhpParser\Node\Expr\FuncCall;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,13 +22,28 @@ use App\Http\Controllers\DashboardController;
 */
 
 Route::get('/', function () {
-    return view('index');
+    $products = Product::paginate(12);
+    return view('index',['products' => $products]);
 });
 
+Route::get('/cart', function() {
+    return view('cart');
+});
 
 Route::get('/entrepreneurs', function() {
-    $users = App\Models\User::where('is_entrepreneur', true)->paginate(4);
+    $users = App\Models\User::where('is_entrepreneur', true)->paginate(12);
     return view('entrepreneurs', ['users' => $users]);
+});
+
+Route::get('/entrepreneurs/{id}', function($id) {
+    $user = App\Models\User::where('id', $id)->first();
+    return view('show', ['user' => $user]);
+});
+
+Route::post('/send', function(Request $request){
+
+    Mail::to("yeison.manrique.31@gmail.com")->queue(new MessageSent("Test"));
+
 });
 
 Route::get('/brands', [App\Http\Controllers\BrandsController::class, 'index']);

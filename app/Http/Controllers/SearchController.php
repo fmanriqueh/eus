@@ -9,7 +9,7 @@ class SearchController extends Controller
 {
     
     public function search(){
-        $products = Product::where( 'name', 'LIKE', '%'.request('query').'%' )->paginate(4);
+        $products = Product::where( 'name', 'LIKE', '%'.request('query').'%' )->paginate(12);
         return view('search', ['elements' => $products]);
     }
 }

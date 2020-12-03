@@ -14,6 +14,7 @@
         <script src={{ asset('js/app.js') }} defer></script>
         <script src={{ asset('js/header.js') }} defer></script>
         <script src={{ asset('js/footer.js') }} defer></script>
+        <script src={{ asset('js/cart.js') }} defer></script>
 
         <script type="text/javascript" src="https://maps.google.com/maps/api/js"></script>
 
